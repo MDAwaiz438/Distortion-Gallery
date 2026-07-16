@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impossible UI - CodePen Editions</title>
+  <meta name="description" content="Mind-blowing UI challenges inspired by legendary CodePen demos: 3D CSS, canvas particles, and extreme SVG morphing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SLIDE 1: Apple TV Style 3D Glass Card -->
+  <section class="slide" id="slide1">
+    <div class="slide-info">
+      <h2>3D Parallax Glass</h2>
+      <p>Pure CSS + JS Mouse Move · preserve-3d</p>
+    </div>
+    
+    <div class="glass-card" id="glassCard">
+      <div class="glass-element gl-1"></div>
+      <div class="glass-element gl-2"></div>
+      <div class="glass-layer glass-bg">
+        <div class="glass-glare" id="glassGlare"></div>
+        <div class="glass-content">
+          <div class="glass-chip"></div>
+          <div class="glass-number">4000 1234 5678 9010</div>
+          <div style="transform: translateZ(40px); font-weight: 800; font-size: 18px; text-transform: uppercase;">Jane Doe</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SLIDE 2: Canvas Text Shatter -->
+  <section class="slide" id="slide2">
+    <div class="slide-info">
+      <h2>Canvas Particle Shatter</h2>
+      <p>HTML5 Canvas · Physics Engine · Pixel manipulation</p>
+    </div>
+    <canvas id="shatterCanvas"></canvas>
+    <div class="shatter-instruction">HOVER MOUSE OVER TEXT</div>
+  </section>
+
+
+  <!-- SLIDE 3: Pure CSS 3D Room -->
+  <section class="slide" id="slide3">
+    <div class="slide-info">
+      <h2>Pure CSS 3D Room</h2>
+      <p>Transform Z · Rotate X/Y · Nested 3D contexts</p>
+    </div>
+    
+    <div class="room">
+      <div class="wall wall-front">FRONT</div>
+      <div class="wall wall-back">BACK</div>
+      <div class="wall wall-left">LEFT</div>
+      <div class="wall wall-right">RIGHT</div>
+      <div class="wall wall-top"></div>
+      <div class="wall wall-bottom"></div>
+      <div class="core"></div>
+    </div>
+  </section>
+
+
+  <!-- SLIDE 4: Squishy Neumorphism -->
+  <section class="slide" id="slide4">
+    <div class="slide-info dark">
+      <h2>Squishy Neumorphism</h2>
+      <p>Multiple Box Shadows · Custom Easing</p>
+    </div>
+    
+    <div class="squishy-toggle" id="squishyToggle">
+      <div class="squishy-track-goo"></div>
+      <div class="squishy-thumb"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

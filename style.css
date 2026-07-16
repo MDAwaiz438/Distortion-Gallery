@@ -1,0 +1,151 @@
+:root {
+  --bg: #050505;
+  --text: #ffffff;
+  --accent: #ff3cac;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+}
+
+#canvas-container {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+#canvas-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ui-layer {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none; /* Let clicks pass to canvas except for buttons */
+}
+
+header {
+  padding: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+.logo span {
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+  pointer-events: auto;
+}
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--text);
+  transform: translateX(-101%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+nav a:hover::after {
+  transform: translateX(0);
+}
+
+.gallery-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10vw;
+}
+
+.title-container {
+  margin-top: auto;
+  margin-bottom: 80px;
+  pointer-events: auto; /* Allow highlighting text if wanted */
+}
+h1 {
+  font-size: clamp(60px, 12vw, 160px);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  mix-blend-mode: overlay; /* Creates cool effects when passing over the image */
+}
+#subtitle-text {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.controls {
+  position: absolute;
+  bottom: 80px;
+  right: 10vw;
+  display: flex;
+  gap: 16px;
+  pointer-events: auto;
+}
+.controls button {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.controls button:hover {
+  background: white;
+  color: black;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  header { padding: 24px; }
+  nav { display: none; } /* Hide on mobile for simplicity */
+  .gallery-content { padding: 0 24px; }
+  .controls { right: 24px; bottom: 40px; }
+  .title-container { margin-bottom: 40px; }
+}
